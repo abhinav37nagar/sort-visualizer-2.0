@@ -7,7 +7,7 @@
 .App {
   width: 100vw;
   height: 100vh;
-  background: palegreen;
+  background: #333;
   position: absolute;
   left: 0;
   top: 0;
@@ -23,5 +23,17 @@
   .bar {
     background-color: pink;
     flex: 1;
+
+    &.current {
+      background-color: palegoldenrod;
+    }
+
+    &.active {
+      background-color: palevioletred;
+    }
+
+    &.sorted {
+      background-color: palegreen;
+    }
   }
 }
