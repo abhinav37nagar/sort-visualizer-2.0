@@ -43,6 +43,11 @@ export const mergeSort = (array) => {
 
   runMerge(array, 0, array.length);
 
+  for (let i = 0; i < array.length; i++) {
+    trace.push({ array: [...array], active: [i], lcurr: -1, rcurr: -1 });
+  }
+  trace.push({ array: [...array], active: [], lcurr: -1, rcurr: -1 });
+
   console.log(trace);
   return trace;
 };

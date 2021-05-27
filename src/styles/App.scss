@@ -28,12 +28,12 @@
       background-color: palegoldenrod;
     }
 
-    &.active {
-      background-color: palevioletred;
-    }
-
     &.sorted {
       background-color: palegreen;
+    }
+
+    &.active {
+      background-color: palevioletred;
     }
   }
 }

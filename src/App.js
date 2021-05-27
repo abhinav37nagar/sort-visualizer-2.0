@@ -4,6 +4,8 @@ import Graph from "./components/Graph";
 import Header from "./components/Header";
 
 import { mergeSort } from "./algorithms/MergeSort";
+import { bubbleSort } from "./algorithms/BubbleSort";
+import { insertionSort } from "./algorithms/InsertionSort";
 
 function App() {
   const [size, setSize] = useState(64);
@@ -28,8 +30,22 @@ function App() {
     setData({ array: tempArray, active: [] });
   };
 
-  const runSort = () => {
-    const trace = mergeSort(data.array);
+  const runSort = (id) => {
+    var trace;
+    var increment = 0;
+
+    if (id === "merge") {
+      trace = mergeSort(data.array);
+      increment = 40;
+    }
+    if (id === "bubble") {
+      trace = bubbleSort(data.array);
+      increment = 10;
+    }
+    if (id === "insertion") {
+      trace = insertionSort(data.array);
+      increment = 50;
+    }
 
     var offset = 0;
 
@@ -37,7 +53,7 @@ function App() {
       setTimeout(() => {
         run(i);
       }, offset);
-      offset += 50;
+      offset += increment;
     }
 
     const run = (i) => {
