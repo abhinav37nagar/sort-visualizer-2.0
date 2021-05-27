@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import { mergeSort } from "./algorithms/MergeSort";
 import { bubbleSort } from "./algorithms/BubbleSort";
 import { insertionSort } from "./algorithms/InsertionSort";
+import { selectionSort } from "./algorithms/SelectionSort";
 
 function App() {
   const [size, setSize] = useState(64);
@@ -45,6 +46,10 @@ function App() {
     if (id === "insertion") {
       trace = insertionSort(data.array);
       increment = 50;
+    }
+    if (id === "selection") {
+      trace = selectionSort(data.array);
+      increment = 10;
     }
 
     var offset = 0;

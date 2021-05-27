@@ -5,6 +5,7 @@ const Header = ({ resetArray, runSort }) => {
       <button onClick={() => runSort("merge")}>merge sort</button>
       <button onClick={() => runSort("bubble")}>bubble sort</button>
       <button onClick={() => runSort("insertion")}>insertion sort</button>
+      <button onClick={() => runSort("selection")}>selection sort</button>
     </div>
   );
 };
