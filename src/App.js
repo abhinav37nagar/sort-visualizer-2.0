@@ -6,8 +6,11 @@ import Header from "./components/Header";
 import { mergeSort } from "./algorithms/MergeSort";
 
 function App() {
-  const [size, setSize] = useState(10);
-  const [array, setArray] = useState([]);
+  const [size, setSize] = useState(64);
+  const [data, setData] = useState({
+    array: [],
+    active: [],
+  });
 
   useEffect(() => {
     resetArray();
@@ -22,17 +25,31 @@ function App() {
       tempArray[i] = tempArray[j];
       tempArray[j] = tempVal;
     }
-    setArray(tempArray);
+    setData({ array: tempArray, active: [] });
   };
 
   const runSort = () => {
-    mergeSort(array);
+    const trace = mergeSort(data.array);
+
+    var offset = 0;
+
+    for (let i = 0; i < trace.length; i++) {
+      setTimeout(() => {
+        run(i);
+      }, offset);
+      offset += 50;
+    }
+
+    const run = (i) => {
+      console.log("run " + i);
+      setData(trace[i]);
+    };
   };
 
   return (
     <div className="App">
       <Header resetArray={resetArray} runSort={runSort} />
-      <Graph array={array} />
+      <Graph {...data} />
     </div>
   );
 }
