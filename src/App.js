@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import Graph from "./components/Graph";
+import Header from "./components/Header";
 
 function App() {
   const [array, setArray] = useState([]);
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header resetArray={resetArray} />
       <Graph array={array} />
     </div>
   );
