@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import Bar from "./Bar";
+
 const Graph = () => {
   const [array, setArray] = useState([]);
 
@@ -19,7 +21,13 @@ const Graph = () => {
     setArray(tempArray);
   };
 
-  return <div className="graph"></div>;
+  return (
+    <div className="graph">
+      {array.map((val, idx) => (
+        <Bar key={idx} value={val} />
+      ))}
+    </div>
+  );
 };
 
 export default Graph;
