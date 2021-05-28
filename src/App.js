@@ -4,10 +4,12 @@ import Graph from "./components/Graph";
 import Header from "./components/Header";
 
 import { mergeSort } from "./algorithms/MergeSort";
-import { bubbleSort } from "./algorithms/BubbleSort";
+import { bubbleSort, cocktailSort } from "./algorithms/BubbleSort";
 import { insertionSort } from "./algorithms/InsertionSort";
 import { selectionSortMin, selectionSortMax } from "./algorithms/SelectionSort";
 import { quickSort } from "./algorithms/QuickSort";
+import { radixSortLsd, radixSortMsd } from "./algorithms/RadixSort";
+import Footer from "./components/Footer";
 
 function App() {
   const [size, setSize] = useState(128);
@@ -18,7 +20,7 @@ function App() {
 
   useEffect(() => {
     resetArray();
-  }, []);
+  }, [size]);
 
   const resetArray = () => {
     var tempArray = Array(size).fill(null);
@@ -42,6 +44,9 @@ function App() {
     if (id === "bubble") {
       trace = bubbleSort(data.array);
     }
+    if (id === "cocktail") {
+      trace = cocktailSort(data.array);
+    }
     if (id === "insertion") {
       trace = insertionSort(data.array);
     }
@@ -54,7 +59,20 @@ function App() {
     if (id === "quick") {
       trace = quickSort(data.array);
     }
+    if (id === "radix-lsd-4") {
+      trace = radixSortLsd(data.array, 4);
+    }
+    if (id === "radix-lsd-16") {
+      trace = radixSortLsd(data.array, 16);
+    }
+    if (id === "radix-msd-4") {
+      trace = radixSortMsd(data.array, 4);
+    }
+    if (id === "radix-msd-16") {
+      trace = radixSortMsd(data.array, 16);
+    }
     increment = 10000 / trace.length;
+    increment = 0;
 
     var offset = 0;
 
@@ -66,7 +84,6 @@ function App() {
     }
 
     const run = (i) => {
-      console.log("run " + i);
       setData(trace[i]);
     };
   };
@@ -75,6 +92,7 @@ function App() {
     <div className="App">
       <Header resetArray={resetArray} runSort={runSort} />
       <Graph {...data} />
+      <Footer setSize={setSize} />
     </div>
   );
 }
