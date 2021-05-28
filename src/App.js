@@ -6,11 +6,11 @@ import Header from "./components/Header";
 import { mergeSort } from "./algorithms/MergeSort";
 import { bubbleSort } from "./algorithms/BubbleSort";
 import { insertionSort } from "./algorithms/InsertionSort";
-import { selectionSort } from "./algorithms/SelectionSort";
+import { selectionSortMin, selectionSortMax } from "./algorithms/SelectionSort";
 import { quickSort } from "./algorithms/QuickSort";
 
 function App() {
-  const [size, setSize] = useState(512);
+  const [size, setSize] = useState(128);
   const [data, setData] = useState({
     array: [],
     active: [],
@@ -45,8 +45,11 @@ function App() {
     if (id === "insertion") {
       trace = insertionSort(data.array);
     }
-    if (id === "selection") {
-      trace = selectionSort(data.array);
+    if (id === "selection-min") {
+      trace = selectionSortMin(data.array);
+    }
+    if (id === "selection-max") {
+      trace = selectionSortMax(data.array);
     }
     if (id === "quick") {
       trace = quickSort(data.array);
