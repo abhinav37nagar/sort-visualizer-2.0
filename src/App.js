@@ -18,6 +18,12 @@ function App() {
     active: [],
   });
 
+  const [darkMode, setDarkMode] = useState(true);
+
+  useEffect(() => {
+    document.title = "Sorting Algorithms Visualizer";
+  }, []);
+
   const resetArray = () => {
     var tempArray = Array(size).fill(null);
     tempArray = tempArray.map((val, idx) => idx + 1);
@@ -82,8 +88,7 @@ function App() {
     if (id === "radix-msd-16") {
       trace = radixSortMsd(data.array, 16);
     }
-    increment = 10000 / trace.length;
-    increment = 0;
+    increment = 8000 / trace.length;
 
     var offset = 0;
 
@@ -104,11 +109,13 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className={`App  ${darkMode ? "AppDark" : ""}`}>
       <Header
         resetArray={resetArray}
         reverseArray={reverseArray}
         setSize={setSize}
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
       />
       <Graph {...data} />
       <Footer runSort={runSort} />

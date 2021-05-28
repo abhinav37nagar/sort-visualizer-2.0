@@ -7,7 +7,7 @@
 .App {
   width: 100vw;
   height: 100vh;
-  background: #121212;
+  background: #eee;
   position: absolute;
   left: 0;
   top: 0;
@@ -26,8 +26,8 @@
     display: flex;
     flex-flow: row nowrap;
     & .title {
-      background: #1f1f1f;
-      color: #e2e2e2;
+      background: #ff8a65;
+      color: #000;
       margin: 10px;
       border-radius: 10px;
       height: 50px;
@@ -42,7 +42,7 @@
         & .btn {
           border-radius: 10px;
           &:hover {
-            background-color: #353535;
+            background-color: #ffbb93;
             cursor: pointer;
           }
         }
@@ -62,6 +62,9 @@
       }
       &.t2 {
         flex: 8;
+      }
+      &.t3 {
+        flex: 1;
       }
 
       & .btn {
@@ -110,8 +113,8 @@
     display: flex;
     flex-flow: row wrap;
     & .title {
-      background: #1f1f1f;
-      color: #e2e2e2;
+      background: #ff8a65;
+      color: #000;
       margin: 10px;
       border-radius: 10px;
       width: 200px;
@@ -127,7 +130,7 @@
           flex: 1;
           border-radius: 10px;
           &:hover {
-            background-color: #353535;
+            background-color: #ffbb93;
             cursor: pointer;
           }
         }
@@ -154,6 +157,26 @@
     & .break {
       flex-basis: 100%;
       height: 0;
+    }
+  }
+}
+
+.AppDark {
+  background: #121212;
+
+  & .header .title-row .title {
+    background: #1f1f1f;
+    color: #e2e2e2;
+    & .btn:hover {
+      background: #353535;
+    }
+  }
+
+  & .footer .title-row .title {
+    background: #1f1f1f;
+    color: #e2e2e2;
+    & .btn:hover {
+      background: #353535;
     }
   }
 }
