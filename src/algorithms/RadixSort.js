@@ -10,9 +10,6 @@ export const radixSortLsd = (array, base) => {
     }
   }
 
-  for (let i = 0; i < array.length; i++) {
-    trace.push({ array: [...array], active: [i], lcurr: -1, rcurr: -1 });
-  }
   trace.push({ array: [...array], active: [], lcurr: -1, rcurr: -1 });
 
   console.log(trace);
@@ -33,9 +30,6 @@ export const radixSortMsd = (array, base) => {
     }
   }
 
-  for (let i = 0; i < array.length; i++) {
-    trace.push({ array: [...array], active: [i], lcurr: -1, rcurr: -1 });
-  }
   trace.push({ array: [...array], active: [], lcurr: -1, rcurr: -1 });
 
   console.log(trace);
