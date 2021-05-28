@@ -7,9 +7,10 @@ import { mergeSort } from "./algorithms/MergeSort";
 import { bubbleSort } from "./algorithms/BubbleSort";
 import { insertionSort } from "./algorithms/InsertionSort";
 import { selectionSort } from "./algorithms/SelectionSort";
+import { quickSort } from "./algorithms/QuickSort";
 
 function App() {
-  const [size, setSize] = useState(64);
+  const [size, setSize] = useState(512);
   const [data, setData] = useState({
     array: [],
     active: [],
@@ -37,20 +38,20 @@ function App() {
 
     if (id === "merge") {
       trace = mergeSort(data.array);
-      increment = 40;
     }
     if (id === "bubble") {
       trace = bubbleSort(data.array);
-      increment = 10;
     }
     if (id === "insertion") {
       trace = insertionSort(data.array);
-      increment = 50;
     }
     if (id === "selection") {
       trace = selectionSort(data.array);
-      increment = 10;
     }
+    if (id === "quick") {
+      trace = quickSort(data.array);
+    }
+    increment = 10000 / trace.length;
 
     var offset = 0;
 
