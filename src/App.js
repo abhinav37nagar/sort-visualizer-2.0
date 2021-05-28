@@ -108,10 +108,10 @@ function App() {
       <Header
         resetArray={resetArray}
         reverseArray={reverseArray}
-        runSort={runSort}
+        setSize={setSize}
       />
       <Graph {...data} />
-      <Footer setSize={setSize} />
+      <Footer runSort={runSort} />
     </div>
   );
 }

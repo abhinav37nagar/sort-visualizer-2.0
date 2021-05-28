@@ -1,31 +1,48 @@
-const Header = ({ resetArray, reverseArray, runSort }) => {
+const Header = ({ resetArray, reverseArray, setSize }) => {
   return (
     <div className="header">
-      <button onClick={() => resetArray()}>reset</button>
-      <button onClick={() => reverseArray()}>reset</button>
-      <button onClick={() => runSort("merge")}>merge sort</button>
-      <button onClick={() => runSort("bubble")}>bubble sort</button>
-      <button onClick={() => runSort("cocktail")}>cocktail shaker sort</button>
-      <button onClick={() => runSort("insertion")}>insertion sort</button>
-      <button onClick={() => runSort("selection-min")}>
-        selection sort(min)
-      </button>
-      <button onClick={() => runSort("selection-max")}>
-        selection sort(max)
-      </button>
-      <button onClick={() => runSort("quick")}>quick sort</button>
-      <button onClick={() => runSort("radix-lsd-4")}>
-        radix sort(lsd) base 4
-      </button>
-      <button onClick={() => runSort("radix-lsd-16")}>
-        radix sort(lsd) base 16
-      </button>
-      <button onClick={() => runSort("radix-msd-4")}>
-        radix sort(msd) base 4
-      </button>
-      <button onClick={() => runSort("radix-msd-16")}>
-        radix sort(msd) base 16
-      </button>
+      <div className="title-row">
+        <div className="title t1">
+          <div className="fore">Operations</div>
+          <div className="back">
+            <div className="btn" onClick={() => resetArray()}>
+              Shuffle
+            </div>
+            <div className="btn" onClick={() => reverseArray()}>
+              Reverse
+            </div>
+          </div>
+        </div>
+        <div className="title t2">
+          <div className="fore">Select Size</div>
+          <div className="back">
+            <div className="btn" onClick={() => setSize(8)}>
+              8
+            </div>
+            <div className="btn" onClick={() => setSize(16)}>
+              16
+            </div>
+            <div className="btn" onClick={() => setSize(32)}>
+              32
+            </div>
+            <div className="btn" onClick={() => setSize(64)}>
+              64
+            </div>
+            <div className="btn" onClick={() => setSize(128)}>
+              128
+            </div>
+            <div className="btn" onClick={() => setSize(256)}>
+              256
+            </div>
+            <div className="btn" onClick={() => setSize(512)}>
+              512
+            </div>
+            <div className="btn" onClick={() => setSize(1024)}>
+              1024
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
