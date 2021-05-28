@@ -1,4 +1,10 @@
-const Header = ({ resetArray, reverseArray, setSize }) => {
+const Header = ({
+  resetArray,
+  reverseArray,
+  setSize,
+  darkMode,
+  setDarkMode,
+}) => {
   return (
     <div className="header">
       <div className="title-row">
@@ -39,6 +45,14 @@ const Header = ({ resetArray, reverseArray, setSize }) => {
             </div>
             <div className="btn" onClick={() => setSize(1024)}>
               1024
+            </div>
+          </div>
+        </div>
+        <div className="title t3">
+          <div className="fore"> {darkMode ? "Dark" : "Light"}</div>
+          <div className="back">
+            <div className="btn" onClick={() => setDarkMode(!darkMode)}>
+              {darkMode ? "Dark" : "Light"}
             </div>
           </div>
         </div>

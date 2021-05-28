@@ -35,6 +35,14 @@ const Footer = ({ runSort }) => {
             </div>
           </div>
         </div>
+        <div className="title t1">
+          <div className="fore">Insertion Sort</div>
+          <div className="back">
+            <div className="btn" onClick={() => runSort("insertion")}>
+              Insertion Sort
+            </div>
+          </div>
+        </div>
         <div className="title t4">
           <div className="fore">Radix Sort</div>
           <div className="back">
@@ -49,14 +57,6 @@ const Footer = ({ runSort }) => {
             </div>
             <div className="btn" onClick={() => runSort("radix-msd-16")}>
               MSD 16
-            </div>
-          </div>
-        </div>
-        <div className="title t1">
-          <div className="fore">Insertion Sort</div>
-          <div className="back">
-            <div className="btn" onClick={() => runSort("insertion")}>
-              Insertion Sort
             </div>
           </div>
         </div>
