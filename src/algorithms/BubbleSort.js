@@ -3,11 +3,9 @@ export const bubbleSort = (array) => {
 
   console.log(array);
 
-  let sorted = false;
   for (let k = array.length; k > 0; k--) {
     for (let i = 0; i < k; i++) {
       if (array[i] < array[i - 1]) {
-        sorted = false;
         let temp = array[i];
         array[i] = array[i - 1];
         array[i - 1] = temp;

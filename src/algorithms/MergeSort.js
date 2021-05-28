@@ -31,7 +31,7 @@ export const mergeSort = (array) => {
   };
 
   const runMerge = (array, l, r) => {
-    if (r == l) return array;
+    if (r === l) return array;
     let m = Math.floor((l + r) / 2);
     if (r - l > 1) {
       runMerge(array, l, m);

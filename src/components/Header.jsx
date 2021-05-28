@@ -1,7 +1,8 @@
-const Header = ({ resetArray, runSort }) => {
+const Header = ({ resetArray, reverseArray, runSort }) => {
   return (
     <div className="header">
       <button onClick={() => resetArray()}>reset</button>
+      <button onClick={() => reverseArray()}>reset</button>
       <button onClick={() => runSort("merge")}>merge sort</button>
       <button onClick={() => runSort("bubble")}>bubble sort</button>
       <button onClick={() => runSort("cocktail")}>cocktail shaker sort</button>

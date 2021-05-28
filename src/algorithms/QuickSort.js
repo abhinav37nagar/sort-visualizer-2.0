@@ -44,8 +44,7 @@ export const quickSort = (array) => {
   };
 
   const runQuick = (array, l, r) => {
-    if (r == l) return array;
-    let m = Math.floor((l + r) / 2);
+    if (r === l) return array;
     let temp = [];
     for (let i = l; i < r; i++) {
       temp.push(array[i]);

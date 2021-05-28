@@ -18,10 +18,6 @@ function App() {
     active: [],
   });
 
-  useEffect(() => {
-    resetArray();
-  }, [size]);
-
   const resetArray = () => {
     var tempArray = Array(size).fill(null);
     tempArray = tempArray.map((val, idx) => idx + 1);
@@ -34,8 +30,23 @@ function App() {
     setData({ array: tempArray, active: [] });
   };
 
+  useEffect(() => {
+    resetArray();
+  }, [size]);
+
+  const reverseArray = () => {
+    var tempArray = Array(size).fill(null);
+    tempArray = tempArray.map((val, idx) => tempArray.length - idx);
+    setData({ array: tempArray, active: [] });
+  };
+
   const runSort = (id) => {
-    var trace;
+    var trace = [
+      {
+        array: [],
+        active: [],
+      },
+    ];
     var increment = 0;
 
     if (id === "merge") {
@@ -88,9 +99,17 @@ function App() {
     };
   };
 
+  const testing = () => {
+    clearTimeout();
+  };
+
   return (
     <div className="App">
-      <Header resetArray={resetArray} runSort={runSort} />
+      <Header
+        resetArray={resetArray}
+        reverseArray={reverseArray}
+        runSort={runSort}
+      />
       <Graph {...data} />
       <Footer setSize={setSize} />
     </div>
